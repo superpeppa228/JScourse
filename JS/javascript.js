@@ -3,7 +3,6 @@ let tc = prompt ("Введите температуру в градусах Це
 let tf = tc*1.8 + 32;
 alert(tf);
 
-
 /*
 let name="Василий";
 let admin = name;
