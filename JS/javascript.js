@@ -1,29 +1,15 @@
-//задание1
-/*
-let i=0;
-while (i<=100) {
-	alert (i);
-	i++;
-}
-*/
 
-//задание 2
-/*
-let i=0;
-do{
-	if(i==0){
-	console.log(i + " - это ноль");
+function getObj (num){
+	let obj;
+	obj = {};
+	if ( num < 0 || num > 999){
+		console.log ("Введите число от 0 до 999");
+		return obj;
 	}
-	else if(i>0 && i % 2 == 0) {
-		console.log(i + " - это четное число");
-	}else{
-		console.log(i + " - это нечетное число");
-	}
-	i++;
-}while(i<=10);
-*/
-//задание 4
- var i;
-        for ( i = 0; i <= 9; i++){
-            console.log(i);
-        }
+	else{
+		obj['единицы'] = num % 10;
+		obj['десятки'] = (num - obj['единицы']) % 100/10;
+		obj['сотни'] = (num - obj['единицы'] -obj['десятки']*10) % 1000/100;
+		return obj;
+}
+console.log(getObj(123));
