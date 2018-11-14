@@ -12,4 +12,4 @@ function getObj (num){
 		obj['сотни'] = (num - obj['единицы'] -obj['десятки']*10) % 1000/100;
 		return obj;
 }
-console.log(getObj(123));
+console.log(getObj(123)); 
