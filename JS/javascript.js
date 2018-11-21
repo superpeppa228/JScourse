@@ -1,17 +1,29 @@
+function init(){
+	var images = document.getElementsByTagName("img");
 
-let tc = prompt ("Введите температуру в градусах Цельсия  ");
-let tf = tc*1.8 + 32;
-alert(tf);
+	for (var i = 0; i < images.length; i++) {
+		//images[i].onclick = changeBigPicture;
+		images[i].addEventListener("click", changeBigPicture);
+	}
+}
 
+function changeBigPicture(event){
+	var appDiv = document.getElementById("big_picture");
+	appDiv.innerHTML = "";	
+	var eventElement = event.target;
+	var imageNumber = eventElement.getAttribute("data-image");
+	var src = "img/big/" + imageNumber + ".jpg";
+	
+	var imageDomElement = document.createElement("img");
+	imageDomElement.src = src;
+	imageDomElement.onload = function() {
+		alert('картинка существует')
+	};
 
-/*
-let name="Василий";
-let admin = name;
-alert(admin);
-*/
+    imageDomElement.onerror = function() {
+    	alert('картинка не существует')
+    };
+	appDiv.appendChild(imageDomElement);
+}
 
-/*
-//На экране будет 1000108//
-var a=1000+"108"
-alert (a);
-*/
+window.onload = init;

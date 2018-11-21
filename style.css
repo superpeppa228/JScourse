@@ -1,0 +1,9 @@
+.big_picture{
+	display:block;
+	float:left;
+	position:relative;
+}
+.previous{
+	display:block;
+	position:absolute;
+}
